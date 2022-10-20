@@ -1,0 +1,784 @@
+01. Faça um programa que leia um número inteiro e o imprima.
+#include <stdio.h>
+
+int main()
+{
+    int num;
+    printf("Digite um numero inteiro: ");
+    scanf("%d", &num);
+    printf("O numero que vc digitou eh o %d", num);
+    return 0;
+}
+
+
+02. Faça um programa que leia um número real e o imprima.
+#include <stdio.h>
+
+int main()
+{
+    float  num;
+    printf("Digite um numero Real: ");
+    scanf("%f", &num);
+    printf("O numero que vc digitou eh o %.2f", num);
+    return 0;
+}
+
+
+03. Peça ao usuário para digitar três valores inte#include <stdio.h>
+
+int main()
+{
+    int n1, n2, n3, soma;
+    printf("Digite tres valores: \n");
+    scanf("%d%d%d", &n1, &n2, &n3);
+    soma = n1 + n2 + n3;
+    printf("A soma entre os numeros eh: %d", soma);
+}
+iros e imprima a soma deles.
+
+
+04. Leia um número real e imprima o resultado do quadrado desse número.
+
+#include <stdio.h>
+
+int main()
+{
+    float num, quad;
+    printf("Digite um numero real para saber o quadrado dele: \n");
+    scanf("%f", &num);
+    quad = num * num;
+    printf("O quadrado do numero eh: %.2f", quad.);
+}
+
+05. Leia um número real e imprima a quinta parte deste número.
+
+#include <stdio.h>
+
+int main()
+{
+    float num, quint;
+    printf("Digite um numero real para saber a quinra parte dele: \n");
+    scanf("%f", &num);
+    quint = num * 0.2;
+    printf("A quinta parte do numero eh: %.2f", quint);
+}
+
+
+06. Leia uma temperatura em graus Celsius e apresente-a convertida em graus Fahrenheit. A
+formula de conversão é: F = C*(9.0/5.0)+32.0, sendo F a temperatura em Fahrenheit e C a
+temperatura em Celsius.
+
+#include <stdio.h>
+
+int main()
+{
+    float cel, fah;
+    printf("Digite a quantidade de graus Celcius para saber em Fahreheint: \n");
+    scanf("%f", &cel);
+    fah = cel * 1.8 + 32;
+    printf("A temperatura informada convertida para Fahreheint eh: %.2f", fah);
+}
+
+
+07. Leia uma temperatura em graus Fahrenheit e apresente-a convertida em graus Celsius. A
+fórmula de conversão é: C = 5.0*(F- 32.0)/9.0, sendo C a temperatura em Celsius e F a
+temperatura em Fahrenheit.
+
+#include <stdio.h>
+
+int main(){
+    float cel, fah;
+    printf("Insira a temperatura em Fahrenheint que deseja converter par Celcius: ");
+    scanf("%f", &fah);
+    cel = 5 * (fah - 32)/9;
+    printf("A temperatura informada em Celcius eh: %.2f", cel);
+}
+
+
+08. Leia uma temperatura em graus Kelvin e apresente-a convertida em graus Celsius. A fórmula
+de conversão é: C = K-273.15, sendo C a temperatura em Celsius e K a temperatura em Kelvin.
+
+#include <stdio.h>
+
+int main(){
+    float cel, kel;
+    printf("Digite a temperatura em Kelvin que deseja converter para Celcius:\n");
+    scanf("%f", &kel);
+    cel = kel - 273.15;
+    printf("A temperatura informada em Celcius eh: %.2f", cel);
+}
+
+
+09. Leia uma temperatura em graus Celsius e apresente-a convertida em graus Kelvin. A fórmula
+de conversão é: K = C + 273.15, sendo C a temperatura em Celsius e K a temperatura em Kelvin.
+
+#include <stdio.h>
+
+int main(){
+    float cel, kel;
+    printf("Digite a temperatura em Celcius que deseja converter para Kelvin:\n");
+    scanf("%f", &cel);
+    kel = cel + 273.15;
+    printf("A temperatura informada em Kelvin eh: %.2f", kel);
+}
+
+
+10. Leia uma velocidade em km/h (quilômetros por hora) e apresente-a convertida em m/s
+(metros por segundo). A fórmula de conversão é: M = K/3.6, sendo K a velocidade em km/h e M
+em m/s.
+
+#include <stdio.h>
+
+int main(){
+    float met, kil;
+    printf("Digite a velocidade em quilometros por hora:\n");
+    scanf("%f", &kil);
+    met = kil/3.6;
+    printf("A velocidade informada em metros por segundo eh: %.2f", met);
+}
+
+
+11. Leia uma velocidade em m/s (metros por segundo) e apresente-a convertida em km/h
+(quilômetros por hora). A fórmula de conversão é: K = M*3.6, sendo K a velocidade em km/h e
+M em m/s.
+
+#include <stdio.h>
+
+int main(){
+    float met, kil;
+    printf("Digite a velocidade em metros por segundo:\n");
+    scanf("%f", &met);
+    kil = met * 3.6;
+    printf("A velocidade informada em quilometros por hora eh: %.2f", kil);
+}
+
+
+12. Leia uma distância em milhas e apresente-a convertida em quilômetros. A fórmula de
+conversão é: K = 1.61*M, sendo K a distância em quilômetros e M em milhas.
+
+#include <stdio.h>
+
+int main(){
+    float kil, mil;
+    printf("Digite a distancia em milhas que deseja converter para quilometros:\n");
+    scanf("%f", &mil);
+    kil = 1.61 * mil;
+    printf("A distancia informada em quilometros eh: %.2f", kil);
+}
+
+
+13. Leia uma distância em quilômetros e apresente-a convertida em milhas. A fórmula de
+conversão é: M = K/1.61, sendo K a distância em quilômetros e M em milhas.
+
+#include <stdio.h>
+
+int main(){
+    float kil, mil;
+    printf("Digite a distancia em quilometros que deseja converter para milhas:\n");
+    scanf("%f", &kil);
+    mil = kil/1.61;
+    printf("A distancia informada em milhas eh: %.2f", mil);
+}
+
+14. Leia um ângulo em graus e apresente-o convertido em radianos. A fórmula de conversão é:
+R = G*/180, sendo G o ângulo em graus e R em radianos e  = 3.141592.
+
+#include <stdio.h>
+
+int main(){
+    float grau, rad, pi = 3.141592;
+    printf("Digite o angulo em graus para ser convertido em radianos:\n");
+    scanf("%f", &grau);
+    rad = grau * pi/180;
+    printf("O angulo informado convertido em radianos eh: %.2f", rad);
+}
+
+15. Leia um ângulo em radianos e apresente-o convertido em graus. A fórmula de conversão é:
+G = R*180/, sendo G o ângulo em graus e R em radianos e  = 3.141592.
+
+#include <stdio.h>
+
+int main(){
+    float grau, rad, pi = 3.141592;
+    printf("Digite o angulo em radianos para ser convertido em graus:\n");
+    scanf("%f", &rad);
+    grau = rad * 180/pi;
+    printf("O angulo informado convertido em graus eh: %.2f", grau);
+}
+
+16. Leia um valor de comprimento em polegadas e apresente-o convertido em centímetros. A
+fórmula de conversão é: C = P*2.54, sendo C o comprimento em centímetros e P o comprimento
+em polegadas.
+
+#include <stdio.h>
+
+int main(){
+    float cent, pol;
+    printf("Digite uma medida em polegadas para ser convertida para centimetros:\n");
+    scanf("%f", &pol);
+    cent = pol * 2.54;
+    printf("A medida informada convertida para centimetros eh: %.2f", cent);
+}
+
+
+17. Leia um valor de comprimento em centímetros e apresente-o convertido em polegadas. A
+fórmula de conversão é: P = C/2.54, sendo C o comprimento em centímetros e P o comprimento
+em polegadas.
+
+
+#include <stdio.h>
+
+int main(){
+    float cent, pol;
+    printf("Digite uma medida em centimetros para ser convertida em polegadas:\n");
+    scanf("%f", &cent);
+    pol = cent / 2.54;
+    printf("A medida informada convertida para polegadas eh: %.2f", pol);
+}
+
+
+18. Leia um valor de volume em metros cúbicos m3 e apresente-o convertido em litros. A
+fórmula de conversão é: L = 1000*M, sendo L o volume em litros e M o volume em metros
+cúbicos.
+#include <stdio.h>
+
+int main(){
+    float m3, lit;
+    printf("Digite um volume em metros cubicos para ser convertida em litros:\n");
+    scanf("%f", &m3);
+    lit = 1000 * m3;
+    printf("O volume innformado convertido para litros eh: %.2f", lit);
+}
+
+
+19. Leia um valor de volume em litros e apresente-o convertido em metros cúbicos m3. A
+fórmula de conversão é: M = L /1000, sendo L o volume em litros e M o volume em metros
+cúbicos.
+#include <stdio.h>
+
+int main(){
+    float m3, lit;
+    printf("Digite um volume em litros para ser convertida em metros cubicos:\n");
+    scanf("%f", &lit);
+    m3 = lit / 1000;
+    printf("O volume informado convertido para metros cubicos eh: %.2f", m3);
+}
+
+
+20. Leia um valor de massa em quilogramas e apresente-o convertido em libras. A fórmula de
+conversão é: L = K/0.45, sendo K a massa em quilogramas e L a massa em libras.
+
+
+#include <stdio.h>
+
+int main(){
+    float kg, lib;
+    printf("Digite a massa em quilogramas para ser convertida em libras:\n");
+    scanf("%f", &kg);
+    lib = kg / 0.45;
+    printf("A medida informada convertida para libras eh: %.2f", lib);
+}
+
+
+21. Leia um valor de massa em libras e apresente-o convertido em quilogramas. A fórmula de
+conversão é: K = L*0.45, sendo K a massa em quilogramas e L a massa em libras.
+
+
+#include <stdio.h>
+
+int main(){
+    float kg, lib;
+    printf("Digite a massa em libras para ser convertida em kg:\n");
+    scanf("%f", &lib);
+    kg = lib * 0.45;
+    printf("A medida informada convertida para quilograma eh: %.2f", kg);
+}
+
+22. Leia um valor de comprimento em jardas e apresente-o convertido em metros. A fórmula de
+conversão é: M = 0.91*J, sendo J o comprimento em jardas e M o comprimento em metros.
+
+
+#include <stdio.h>
+
+int main(){
+    float m, jar;
+    printf("Digite a distancia em jardas para ser convertida em metro:\n");
+    scanf("%f", &jar);
+    m = jar * 0.91;
+    printf("A distancia informada em metros eh: %.2f", m);
+}
+
+
+23. Leia um valor de comprimento em metros e apresente-o convertido em jardas. A fórmula de
+conversão é: J = M/0.91, sendo J o comprimento em jardas e M o comprimento em metros.
+
+
+#include <stdio.h>
+
+int main(){
+    float m, jar;
+    printf("Digite a distancia em metros para ser convertida em jardas:\n");
+    scanf("%f", &m);
+    jar = m / 0.91;
+    printf("A distancia informada em jardas eh: %.2f", jar);
+}
+
+
+24. Leia um valor de área em metros quadrados m2 e apresente-o convertido em acres. A
+fórmula de conversão é: A = M*0.000247, sendo M a área em metros quadrados e A a área em
+acres
+
+
+#include <stdio.h>
+
+int main(){
+    float m2, acr;
+    printf("Digite a area em metros quadrados para ser convertida em acres:\n");
+    scanf("%f", &m2);
+    acr = m2 * 0.000247;
+    printf("A area informada em acres eh: %.2f", acr);
+}
+
+25. Leia um valor de área em acres e apresente-o convertido em metros quadrados m2
+. A
+fórmula de conversão é: M = A*4048.58, sendo M a área em metros quadrados e A a área em
+acres.
+
+
+#include <stdio.h>
+
+int main(){
+    float m2, acr;
+    printf("Digite a area em acress. para ser convertida em metro quadrado:\n");
+    scanf("%f", &acr);
+    m2 = acr / 0.000247;
+    printf("A area informada em metro quadrado eh: %.2f", m2);
+}
+
+26. Leia um valor de área em metros quadrados m2 e apresente-o convertido em hectares. A
+fórmula de conversão é: H = M*0.0001, sendo M a área em metros quadrados e H a área em
+hectares.
+
+#include <stdio.h>
+
+int main(){
+    float m2, hec;
+    printf("Digite a area em metro quadrado para ser convertida em hectares:\n");
+    scanf("%f", &m2);
+    hec = m2 * 0.0001;
+    printf("A area informada em hectares eh: %.4f", hec);
+}
+
+
+27. Leia um valor de área em hectares e apresente-o convertido em metros quadrados m2
+. A
+fórmula de conversão é: M = H*10000, sendo M a área em metros quadrados e H a área em
+hectares.
+
+#include <stdio.h>
+
+int main(){
+    float m2, hec;
+    printf("Digite a area em hectares para ser convertida metro quadrado:\n");
+    scanf("%f", &hec);
+    m2 = hec / 0.0001;
+    printf("A area informada em metro quadrado eh: %.2f", m2);
+}
+
+
+28. Faça a leitura de três valores e apresente como resultado a soma dos quadrados dos três
+valores lidos.
+
+
+#include <stdio.h>
+
+int main(){
+    float n1, n2, n3, soma;
+    printf("Digite tres numeros que deseja saber a soma de seus quadrados:\n");
+    scanf("%f%f%f", &n1, &n2, &n3);
+    soma = (n1*n1) + (n2*n2) + (n3*n3);
+    printf("A soma do quadrado dos tres numero digitados eh: %.2f", soma);
+}
+
+29. Leia quatro notas, calcule a média aritmética e imprima o resultado.
+
+#include <stdio.h>
+
+int main(){
+    float n1, n2, n3, n4, media;
+    printf("Digite tres notas que deseja saber a media aritmetica:\n");
+    scanf("%f%f%f%f", &n1, &n2, &n3, &n4);
+    media = (n1 + n2 + n3 + n4)/4;
+    printf("A media das 4 notas informadas eh: %.2f", media);
+}
+
+30. Leia um valor em real e a cotação do dólar. Em seguida, imprima o valor correspondente em
+dólares.
+
+#include <stdio.h>
+
+int main(){
+    float real, dol, cot;
+    printf("Digite um valor em reais:\n");
+    scanf("%f", &real);
+    printf("Informe a cotacao do Dollar\n");
+    scanf("%f", &cot);
+    dol = real/cot;
+    printf("O valor inserido convertido para Dollar eh: %.2f", dol);
+}
+
+31. Leia um número inteiro e imprima o seu antecessor e o seu sucessor.
+
+#include <stdio.h>
+
+int main(){
+    int num;
+    printf("Digite um numero para saber o seu antecessor e o seu sucessor:\n");
+    scanf("%d", &num);
+    printf("O antecessor e sucessor do numero informado eh: %d e %d, respectivamente", num - 1, num+ 1);
+}
+
+
+32. Leia um número inteiro e imprima a soma do sucessor de seu triplo com o antecessor de seu
+dobro.
+
+#include <stdio.h>
+
+int main(){
+    int num, sucTri, antDob, soma;
+    printf("Digite um numero:\n");
+    scanf("%d", &num);
+    sucTri = (num * 3) + 1;
+    antDob = (num * 2) - 1;
+    soma = sucTri + antDob;
+    printf("Esse valor somado ao sucessor de seu triplo e ao antecessor de seu dobro eh: %d", soma);
+}
+
+33. Leia o tamanho do lado de um quadrado e imprima como resultado a sua área.
+
+#include <stdio.h>
+
+int main(){
+    int l, a;
+    printf("Digite um lado do quadrado:\n");
+    scanf("%d", &l);
+    a = l * l;
+    printf("A area do quadrado eh: %d", a);
+}
+
+34. Leia o valor do raio de um círculo e calcule e imprima a área do círculo correspondente. A
+área do círculo é *raio2
+, considere  = 3.141592.
+
+#include <stdio.h>
+
+int main(){
+    float r, a, pi;
+    printf("Digite o raio do circulo:\n");
+    scanf("%f", &r);
+    pi = 3.141592;
+    a = pi * (r * r);
+    printf("A area do circulo eh: %.2f", a);
+}
+
+35. Sejam a e b os catetos de um triângulo, onde a hipotenusa é obtida pela equação:
+ℎ𝑖𝑝𝑜𝑡𝑒𝑛𝑢𝑠𝑎 = √𝑎
+2 + b
+2. Faça um programa que receba os valores de a e b e calcule o valor da
+hipotenusa através da equação. Imprima o resultado dessa operação.
+
+#include <stdio.h>
+
+int main(){
+    float a, b, h;
+    printf("Digite os catetos a e b:\n");
+    scanf("%f%f", &a, &b);
+    h = sqrt((a * a) + (b * b));
+    printf("A hipotenusa eh: %.2f", h);
+}
+
+36. Leia a altura e o raio de um cilindro circular e imprima o volume do cilindro. O volume de um
+cilindro circular é calculado por meio da seguinte fórmula: V =  * raio2 * altura, onde  =
+3.141592.
+
+#include <stdio.h>
+
+int main(){
+    float h, r, v, pi;
+    printf("Digite a altura e o raio de um cilindro circular, respectivamente:\n");
+    scanf("%f%f", &h, &r);
+    pi = 3.141592;
+    v = pi * (r * r) * h;
+    printf("O volume do cilindro eh: %.2f", v);
+}
+
+37. Faça um programa que leia o valor de um produto e imprima o valor com desconto, tendo
+em vista que o desconto foi de 12%.
+#include <stdio.h>
+
+int main(){
+    float v, vCd;
+    printf("Digite o valor de um produto:\n");
+    scanf("%f", &v);
+    vCd = v * 0.88;
+    printf("O valor com um desconte de 12%% eh: %.2f", vCd);
+}
+
+38. Leia o salário de um funcionário. Calcule e imprima o valor do novo salário, sabendo que ele
+recebeu um aumento de 25%.
+
+#include <stdio.h>
+
+int main(){
+    float sal, sCa;
+    printf("Digite o valor do seu salario:\n");
+    scanf("%f", &sal);
+    sCa = sal * 1.25;
+    printf("O valor do seu salario com um bonus de 25%% eh: %.2f", sCa);
+}
+
+39. A importância de R$780.000,00 será dividida entre três ganhadores de um concurso. Sendo
+que da quantia total:
+- O primeiro ganhador receberá 46%;
+- O segundo receberá 32%;
+- O terceiro receberá o restante;
+Calcule e imprima a quantia ganha por cada um dos ganhadores.
+
+#include <stdio.h>
+
+int main(){
+    float pGan, sGan, tGan, cap;
+    cap = 780000;
+    pGan = cap * 0.46;
+    sGan = cap * 0.32;
+    tGan = cap - (pGan + sGan);
+    printf("Considerando o capital de de $780.000, o primeiro ganhador levara %.2f; o segundo %.2f; o terceiro ganhador, %.2f", pGan, sGan, tGan);
+}
+
+
+40. Uma empresa contrata um encanador a R$30,00 por dia. Faça um programa que solicite o
+número de dias trabalhados pelo encanador e imprima a quantia líquida que deverá ser paga,
+sabendo-se que são descontados 8% para imposto de renda.
+
+#include <stdio.h>
+
+int main(){
+    int nDia; 
+    float quant;
+    printf("Dgite o numero de dia de trabalho do encanador (considerando 30 reais p/ dia)\n");
+    scanf("%d", &nDia);
+    quant = (nDia * 30) * 0.92;
+    printf("A quantidade a ser paga, considerando o desconto de 8%% do imposto de renda, eh: %.2f", quant);
+}
+
+41. Faça um programa que leia o valor da hora de trabalho (em reais) e número de horas
+trabalhadas no mês. Imprima o valor a ser pago ao funcionário, adicionando 10% sobre o valor
+calculado.
+#include <stdio.h>
+
+int main(){
+    int nH; 
+    float quant, vH;
+    printf("Digite o valor da hora de trabalho em reais\n");
+    scanf("%f", &vH);
+    printf("Digite o numero de horas trabalhadas mensalmente\n");
+    scanf("%d", &nH);
+    quant = (nH * vH) * 1.1;
+    printf("A quantidade a ser paga, considerando o acrescimo de 10%%, eh: %.2f", quant);
+}
+
+
+42. Receba o salário-base de um funcionário. Calcule e imprima o salário a receber, sabendo-se
+que esse funcionário tem uma gratificação de 5% sobre o salário-base. Além disso, ele paga 7%
+de imposto sobre o salário-base.
+#include <stdio.h>
+
+int main(){
+    int nH; 
+    float sal, salLiq;
+    printf("Informe o salario base do funcionario: \n");
+    scanf("%f", &sal);
+    salLiq = sal * 0.98;
+    printf("O salario liquido ser pago, considerando a bonificacao de 5%% e o pagamento de imposto de 7%% eh: %.2f", salLiq);
+}
+
+
+43. Escreva um programa de ajuda para vendedores. A partir de um valor total lido, mostre:
+- o total a pagar com desconto de 10%;
+- o valor de cada parcela, no parcelamento de 3x sem juros;
+- a comissão do vendedor, no caso da venda ser a vista (5% sobre o valor com desconto);
+- a comissão do vendedor, no caso da venda ser parcelada (5% sobre o valor total).
+#include <stdio.h>
+
+int main(){
+    float v, vParc, vCdesc, parcEm3, comAvista, comSemDesc;
+    int nParc;
+    printf("Informe o valor: \n");
+    scanf("%f", &v);
+    vCdesc = v * 0.9;
+    printf("O valor total a ser pago com o desconto de 10%% eh: %.2f\n", vCdesc);
+    parcEm3 = v / 3;
+    printf("Parcelando esse valor em 3 vezes sem juros, o valor de cada parcela sera de: %.2f\n", parcEm3);
+    comAvista = vCdesc * 0.05;
+    printf("A comissao do vendedor (5%% do valor com desconto) eh: %.2f\n", comAvista);
+    comSemDesc = v * 0.05;
+    printf("A comissao do vender dor (5%% do valor total) eh: %.2f\n", comSemDesc);
+}
+
+
+44. Receba a altura do degrau de uma escada e a altura que o usuário deseja alcançar subindo
+a escada. Calcule e mostre quantos degraus o usuário deverá subir para atingir seu objetivo
+#include <stdio.h>
+
+int main(){
+    float hDeg, hEsc; 
+    int qntDeg;
+    printf("informe a altura de cada degrau da escada: \n");
+    scanf("%f", &hDeg);
+    printf("informe a altura da escada: \n");
+    scanf("%f", &hEsc);
+    qntDeg = hEsc / hDeg;
+    printf("Voce subira aproximadamente %d degraus", qntDeg);
+}
+
+45. Faça um programa para converter uma letra maiúscula em letra minúscula. Use a tabela
+ASCII para resolver o problema.
+
+#include <stdio.h>
+
+int main(){
+    char letM, letm;
+    printf("Insira uma letra uma letra maiuscula\n");
+    scanf("%c", &letM);
+    letm = letM + 32;
+    printf("Essa letra em minusculo eh: %c", letm);
+}
+
+
+46. Faça um programa que leia um número inteiro positivo de três dígitos (de 100 a 999). Gere
+outro número formado pelos dígitos invertidos do número lido.
+
+#include <stdio.h>
+
+int main(){
+    int numLid, a1, a2, a3;
+    printf("Insira um numero de tres algarismos\n");
+    scanf("%d", &numLid);
+    a1 = numLid%10;
+    a2 = (numLid % 100)/10;
+    a3 = (numLid % 1000)/100;
+    printf("Esse numero com os algarismos na ordem contraria eh: %d%d%d \n", a1, a2, a3);
+}
+
+47. Leia um número inteiro de 4 dígitos (de 1000 a 9999) e imprima 1 dígito por linha.
+
+#include <stdio.h>
+
+int main(){
+    int numLid, a1, a2, a3, a4;
+    printf("Insira um numero de quatro algarismos\n");
+    scanf("%d", &numLid);
+    a1 = numLid /1000;
+    a2 = (numLid%1000) / 100;
+    a3 = ((numLid%1000) % 100)/10;
+    a4 = (((numLid%1000)%100)%10);
+    printf("os algarismos desse numero imprimidos linha por linha sao: \n %d\n%d\n%d\n%d\n", a1, a2, a3, a4);
+    }
+
+48. Leia um valor inteiro em segundos, e imprima-o em horas, minutos e segundos.
+
+#include <stdio.h>
+
+int main(){
+    int segInf, s, h, m;
+    printf("Informe um tempo em segundos: \n");
+    scanf("%d", &segInf);
+    s = segInf;
+    m = segInf/60;
+    h = segInf / 3600;
+    printf("O tempo informado eh \n %d horas\n %d minutos \n %d segundos", h, m, s);
+}
+
+
+49. Faça um programa para ler o horário (hora, minuto e segundo) de início e a duração, em
+segundos, de uma experiência biológica. O programa deve resultar com o novo horário (hora,
+minuto e segundo) do termino da mesma.
+
+#include <stdio.h>
+
+int main(){
+    int h0, m0, s0, d, tF, hora, min, seg;
+    printf("Informe o tempo inicial do experimento - hora, minuto, segundo, respectivamente): \n");
+    scanf("%d%d%d", &h0, &m0, &s0);
+    printf("Informe a duracao, em segundos, do experimento\n");
+    scanf("%d", &d);
+    hora = d / 3600;
+    min = (d % 3600) / 60;
+    seg = ((d % 3600) % 60);;
+    printf("O tempo final da experiencia eh: %d:%d:%d", h0 + hora, m0 + min, s0 + seg);
+}
+
+
+50. Implemente um programa que calcule o ano de nascimento de uma pessoa a partir de sua
+idade e do ano atual.
+
+#include <stdio.h>
+
+int main(){
+    int idade, anoNasc, anoAt;
+    printf("Informe a sua idade:\n");
+    scanf("%d", &idade);
+    printf("Informe o ano atual: \n");
+    scanf("%d", &anoAt);
+    anoNasc = anoAt - idade;
+    printf("O seu ano de nascimento eh: %d", anoNasc);
+}
+
+
+51. Escreva um programa que leia as coordenadas x e y de pontos no R
+2 e calcule sua distância
+da origem (0, 0).
+
+#include <stdio.h>
+#include <math.h>
+int main(){
+    int a, b, d;
+    printf("Informe dois pontos de um plano (x, y): \n");
+    scanf("%d%d", &a, &b);
+    d = sqrt((a*a) + (b*b));
+    printf("A distancia desses pontos ate a origem eh: %d", d);
+}
+
+52. Três amigos jogaram na loteria. Caso eles ganhem, o prêmio deve ser repartido
+proporcionalmente ao valor que cada deu para a realização da aposta. Faça um programa que
+leia quanto cada apostador investiu, o valor do prêmio, e imprima quanto cada um ganharia do
+prêmio com base no valor investido.
+
+#include <stdio.h>
+int main(){
+    float qntAp, prem, a1, a2, a3, totAp;
+    printf("Tres amigos apostaram na loteria. Informe o valor da aposta de cada um dos tres\n");
+    scanf("%f%f%f", &a1, &a2, &a3);
+    printf("Informe o valor do premio\n");
+    scanf("%f", &prem);
+    totAp = a1 + a2 + a3;
+    printf("O primeiro apostador ganhara: %.2f", (a1/totAp) * prem);
+    printf("O segundo apostador ganhara: %.2f", (a2/totAp) * prem);
+    printf("O terceiro apostador ganhara: %.2f", (a3/totAp) * prem);
+}
+
+
+53. Faça um programa para ler as dimensões de um terreno (comprimento c e largura l), bem
+como o preço do metro de tela p. Imprima o custo para cercar este mesmo terreno com tela.
+
+#include <stdio.h>
+int main(){
+    float comp, lar, cust, metTel;
+    printf("Informe o comprimento e largura do terreno, respectivamente: \n");
+    scanf("%f%f", &comp, &lar);
+    printf("Informe o valor do metro de tela:\n");
+    scanf("%f", &metTel);
+    cust = (2 * (comp + lar)) * metTel;
+    printf("O valor necessario para cercar todo o terreno eh: %.2f", cust);
+}
+
