@@ -1260,7 +1260,7 @@ entre R$12.000,00 e R$25.000,00 10 15
 acima de R$25.000,00 15 20
 
 #include <stdio.h>
-int main(){
+    int main(){
     float cf, cc;
     printf("Informe o custo de fabrica do carro $:");
     scanf("%f", &cf);
