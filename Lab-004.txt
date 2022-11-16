@@ -1,0 +1,520 @@
+//EXERCICIOS DE PROGRAMAÇÃO PROCEDIMENTAL//
+//Laços de repetição
+Lázaro Joabe Nunes Soares
+
+1. Faça um programa que determine o mostre os cinco primeiros múltiplos de 3, considerando
+números maiores que 0.
+
+#include <stdio.h>
+int main(){
+    int num, mut;
+    num = 1;
+    mut = 0;
+    while(mut < 5)
+    {
+        if(num%3 == 0){
+            printf("%d\n", num);
+            mut++;
+        }
+        num++;
+    }
+    
+}
+
+2. Escreva um programa que escreva na tela, de 1 até 100, de 1 em 1, 3 vezes. A primeira vez
+deve usar a estrutura de repetição for, a segunda while, e a terceira do-while.
+#include <stdio.h>
+int main(){
+    int num = 1;
+    while (num <= 100)
+    {
+        printf("%d\n", num);
+        num++;
+    }
+}
+
+#include <stdio.h>
+int main(){
+    int num = 1;
+    do{
+        printf("%d\n", num);
+        num++;
+    } while (num <= 100);
+}
+
+
+#include <stdio.h>
+int main(){
+    for(int i = 1; i <= 100; i++){
+        printf("%d\n", i);
+    }
+}
+
+3. Faça um algoritmo utilizando o comando while que mostra uma contagem regressiva na tela,
+iniciando em 10 e terminando em 0. Mostrar uma mensagem “FIM!” após a contagem.
+#include <stdio.h>
+int main(){
+    int num = 10;
+    while (num >= 0)
+    {
+        printf("%d\n", num);
+        num--;
+    }
+    printf("FIM!!");
+}
+
+4. Escreva um programa que declare um inteiro, inicialize-o com 0, e incremente-o de 1000 em
+1000, imprimindo seu valor na tela, até que seu valor seja 100.000 (cem mil).
+#include <stdio.h>
+int main(){
+    for(int i = 0; i <= 100000; i+= 1000){
+        printf("%d\n", i);
+    }
+}
+
+5. Faça um programa que peça ao usuário para digitar 10 valores e some-os.
+#include <stdio.h>
+int main(){
+    int p, num, soma;
+    soma = p = 0;
+    while(p < 10)
+    {
+        printf("Digite um valor: ");
+        scanf("%d", &num);
+        soma += num;
+        p++;
+    }
+    printf("A soma eh: %d", soma);
+    
+}
+
+6. Faça um programa que leia 10 inteiros e imprima sua média.
+#include <stdio.h>
+int main(){
+    int p, num, soma;
+    soma = p = 0;
+    while(p < 10)
+    {
+        printf("Digite um valor: ");
+        scanf("%d", &num);
+        soma += num;
+        p++;
+    }
+    printf("A media eh: %.2f", (float) soma/10);
+    
+}
+
+7. Faça um programa que leia 10 inteiros positivos, ignorando não positivos, e imprima sua
+média.
+#include <stdio.h>
+int main(){
+    int c, num, soma, cnt;
+    soma = cnt = c = 0;
+    while (c < 10)
+    {
+        printf("Digite um numero postivo. Se digitar negativo, sera ignorado: ");
+        scanf("%d", &num);
+        if(num > 0){
+            soma += num;
+            cnt++;
+        }
+        c++;
+    }
+    printf("A media dos %d numeros levados em consideracao eh: %.2f", cnt, (float) soma/cnt);
+    
+}
+
+8. Escreva um programa que leia 10 números e escreva o menor valor lido e o maior valor lido.
+#include <stdio.h>
+int main(){
+    int num, numMaior, numMenor, c;
+    c = 0;
+    numMaior = numMenor = 0;
+    while (c < 10)
+    {
+        printf("Digite um numero: ");
+        scanf("%d", &num);
+        if(numMaior < num){
+            numMaior = num;
+        } else if(numMenor > num){
+            numMenor = num;
+        }
+        c++;
+    }
+    printf("O maior numero eh: %d e o menor: %d", numMaior, numMenor);
+    
+}
+
+9. Faça um programa que leia um número inteiro N e depois imprima os N primeiros números
+naturais ímpares.
+#include <stdio.h>
+int main(){
+    int num, cnt;
+    cnt = 1;
+    printf("Digite a quantidade dos primeiros numeros impares q deseja saber: ");
+    scanf("%d", &num);
+    for (int i = 0; cnt <= num; i++)
+    {
+        if(i%2 != 0){
+            printf("%d\n", i);
+            cnt++;
+        }
+    }
+    
+       
+}
+
+10. Faça um programa que calcule e mostre a soma dos 50 primeiros números pares.
+#include <stdio.h>
+int main(){
+    int soma, cnt;
+    cnt = 1;
+    soma = 0;
+    printf("Soma dos primeiros 50 numeros pares: \n");
+    for (int i = 1; cnt <= 50; i++)
+    {
+        if(i%2 == 0){
+            printf("+%d\n", i);
+            soma += i;
+            cnt++;
+        }
+    }
+    printf("Eh igual a: %d", soma);
+}
+
+
+11. Faça um programa que leia um número inteiro positivo N e imprima todos os números
+naturais de 0 até N em ordem crescente.
+#include <stdio.h>
+int main(){
+    int num;
+    printf("Digite um numero inteiro positivo: ");
+    scanf("%d", &num); 
+    for (int i = 0; i < num; i++)
+    {
+        printf("%d\n", i);
+    }
+    
+}
+
+12. Escreva um programa que leia um número inteiro e calcule a soma de todos os divisores
+desse número, com exceção dele próprio. Ex.: a soma dos divisores do número 66 é 1 + 2 + 3 +
+6 + 11 + 22 + 33 = 78
+#include <stdio.h>
+int main(){
+    int num, soma;
+    soma = 0;
+    printf("Digite um numero para saber a soma de seus divisores: ");
+    scanf("%d", &num);
+    for (int i = 1; i < num; i++)
+    {
+        if(num%i == 0){
+            printf("%d\n +", i);
+            soma += i;
+        }
+    }
+    printf("A soma dos divisores de %d, exceto o proprio %d, eh %d", num, num, soma);
+}
+
+13. Faça um programa que some todos os números naturais abaixo de 1000 que são múltiplos
+de 3 ou 5.
+#include <stdio.h>
+int main(){
+    int num, soma;
+    soma = 0;
+    for (int i = 1; i < 1000; i++)
+    {
+        if(i%3 == 0 || i%5 == 0){
+            printf("%d\n +", i);
+            soma += i;
+        }
+    }
+    printf("A soma dos multiplos de 3 e 5 ate 100 eh: %d", soma);
+}
+
+14. Faça um programa que simula o lançamento de dois dados, d1 e d2, n vezes, e tem como
+saída o número de cada dado e a relação entre eles (>, <, =) de cada lançamento.
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main(){
+    int num, d1, d2;
+    srand(time(NULL));
+    printf("Digite a quantidade de vezes em q os dados serao lancados: ");
+    scanf("%d", &num);
+    for (int i = 0; i < num; i++)
+    {
+        d1 = rand() % 6 +1;
+        d2 = rand() % 6 + 1;
+        if(d1 == d2){
+            printf("%d = %d\n", d1, d2);
+        } else if(d1 > d2){
+            printf("%d > %d\n", d1, d2);
+        } else {
+            printf("%d < %d\n", d1, d2);
+        }
+    }    
+}
+
+15. Faça um programa que leia um conjunto não determinado de valores, um de cada vez, e
+escreva para cada um dos valores lidos, o quadrado, o cubo e a raiz quadrada. Finalize a entrada
+de dados com um valor negativo ou zero
+#include <stdio.h>
+#include <math.h>
+int main(){
+    int num;
+    printf("O programa sera encerrado se digitar numeros negativos ou 0\n");
+    do
+    {
+        printf("Digite um numero: \n");
+        scanf("%d", &num);
+        if(num > 0){
+            printf("O quadrado de %d eh %d\n", num, num * num);
+            printf("O cubo de %d eh %d\n", num, num*num*num);
+            printf("A raiz quadrada de %d eh %.2f\n", num, (float) sqrt(num));
+        } else {
+            break;
+        }
+    } while (num > 0);
+    printf("Programa encerrado!");
+}
+
+
+16. Faça um programa que apresente um menu de opções para o cálculo das seguintes
+operações entre dois números:
+ Adição (opção 1)
+ Subtração (opção 2)
+ Multiplicação (opção 3)
+ Divisão (opção 4).
+ Saída (opção 5)
+O programa deve possibilitar ao usuário a escolha da operação desejada, a exibição do resultado
+e a volta ao menu de opções. O programa só termina quando for escolhida a opção de saída
+(opção 5).
+#include <stdio.h>
+int main(){
+    int op, n1, n2;
+    do
+    {
+        do
+        {
+            printf("Escolha uma opcao:\n1-Adicao\n2-Subtracao\n3-Multiplicacao\n4-Divisao\n5-Saida\n");
+            scanf("%d", &op);
+            if(op > 5){
+                printf("Opcao invalida!\n");
+            } 
+            if(op >= 1 && op <= 4 ){
+                printf("Digite dois numeros: ");
+                scanf("%d%d", &n1, &n2);
+            }
+            switch (op)
+            {
+            case 1:
+                printf("A soma eh %d\n", n1 + n2);
+                break;
+            case 2:
+                printf("A subtacao eh: %d\n", n1 - n2);
+                break;
+            case 3:
+                printf("O produto eh: %d\n", n1 * n2);
+                break;
+            case 4:
+                if(n2 == 0){
+                    printf("Impossivel dividir por 0!\n");
+                } else {
+                    printf("A divisao eh: %.2f\n", (float) n1/n2);
+                }
+                break;
+            }
+        } while (op < 1 || op > 5);
+    } while (op != 5);
+    printf("Programa encerrado!");
+}
+
+17. Chico tem 1.50 metro e cresce 2 centímetros por ano, enquanto Zé tem 1.10 metros e cresce
+3 centímetros por ano. Escreva um programa que calcule e imprima quantos anos serão
+necessários para que Zé seja maior que Chico.
+#include <stdio.h>
+int main(){
+    float tChico, tZe; 
+    int ano = 0;
+    tChico = 1.5;
+    tZe = 1.1;
+    while (tChico >= tZe)
+    {
+        tChico += 0.02;
+        tZe += 0.03;
+        ano++;
+    }
+    printf("Serao necessarios %d anos para que Ze seja maior q Chico", ano);
+    
+}
+
+18. Um funcionário recebe aumento anual. Em 1995 foi contratado por 2000 reais. Em 1996
+recebeu aumento de 1.5%. A partir de 1997, os aumentos sempre correspondem ao dobro do
+ano anterior. Faça programa que determine o salár/*#include <stdio.h>
+int main(){
+    float aum = 0.015, sal = 2000;
+    for (int i = 1996; i <= 2022 ; i++)
+    {
+        sal += (sal * aum);
+        printf("Ano: %d, aumento: %.2f%%, salario:%.2f\n", i, aum * 100, sal);
+        aum = aum * 2;
+    }
+    
+}
+
+19. Escreva um programa que receba como entrada o valor do saque realizado pelo cliente de
+um banco e retorne quantas notas de cada valor serão necessárias para atender ao saque com
+a menor quantidade de notas possível. Serão utilizadas notas de 100, 50, 20, 10, 5, 2 e 1 real.
+#include <stdio.h>
+int main(){
+    int saq = 0, n100, n50, n20, n10, n5, n2, n1;
+    printf("Digite o valor do saque: ");
+    scanf("%d", &saq);
+    n100 = n50 = n20 = n10 = n5 = n2 = n1 = 0;
+    while (saq > 0)
+    {
+
+        if(saq >= 100){
+            n100 = saq/100;
+            saq = saq - 100 * n100;
+        }
+        if(saq >= 50){
+            n50 = saq / 50;
+            saq = saq - 50 * n50;
+        }
+        if(saq >= 20){
+            n20 = saq/20;
+            saq = saq - 20 * n20;
+        }
+        if(saq >= 10){
+            n10 = saq / 10;
+            saq = saq - 10 * n10;
+        }
+        if(saq >= 5){
+            n5 = saq / 5;
+            saq = saq - 5 * n5;
+        }
+        if (saq >= 2){
+            n2 = saq/2;
+            saq = saq - 2 * n2;
+        }
+        if(saq >= 1){
+            n1 = saq/1;
+            saq = saq - n1;
+        }
+        printf("Sao necessarias:\n %d notas de $100\n %d notas de $50\n %d notas de $20\n %d notas de 10\n %d notas de $5\n %d notas de $2\n %d notas de $1", n100, n50, n20, n10, n5, n2, n1);
+
+    }
+}
+
+20. Faça um programa que calcule a soma de todos os números primos abaixo de dois milhões.
+#include <stdio.h>
+#include <math.h>
+int main(){
+    int soma = 2, raizQ, pri;
+    for (int i = 3; i <= 2000000; i += 2) {
+        pri = 1;
+        raizQ = (int)sqrt(i);
+        for (int j = 3; j <= raizQ; j += 2) {
+            if (i % j == 0) {
+                pri = 0;
+                break;
+            }
+        }
+        if (pri) {
+            soma += i;
+        }
+    }
+    printf("A soma dos numeros primos abaixo de 2 milhoes eh: %d\n", soma);
+}
+
+21. Faça um programa que conte quantos números primos existentes entre a e b, onde a e b são
+números informados pelo usuário.
+#include <stdio.h>
+int main(){
+    int a, b, pri, qtd = 0;
+    printf("Digite um numero 'a' e 'b', respectivamente: ");
+    scanf("%d%d", &a, &b);
+    for (int i = a; i <= b; i++){
+        pri = 0;
+        for (int j = 1; j <= i; j++)
+        {
+            if(i%j==0){
+                pri++;
+            }
+        }
+        if(pri == 2){
+            qtd++;
+        }
+    }
+    printf("O numero de primos entre %d e %d eh: %d", a, b, qtd);
+    
+}
+
+
+22. Faça um programa que calcule o maior número palíndromo feito a partir do produto de dois
+números de 3 dígitos. Ex.: O maior palíndromo feito a partir do produto de dois números de dois
+dígitos é 9009 = 91*99.
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main()
+{
+    int num2, produto, auxA, auxB, numInv, qtd, maior, fator1, fator2;
+    numInv = qtd = maior = 0;
+
+    for (int num1 = 999; num1 >= 100; num1--) {
+        for (num2 = num1; num2 >= 100; num2--) {
+            produto = num1 * num2;
+            if (produto > maior) {
+                auxA = produto;
+                while (auxA != 0) {
+                    qtd++;
+                    auxA /= 10;
+                }
+                auxA = produto;
+                numInv = 0;
+                while(auxA != 0) {
+                    auxB = auxA%10;
+                    numInv += auxB * pow(10, qtd - 1);
+                    auxA = auxA / 10;
+                    qtd--;
+                }
+                if (produto == numInv) {
+                    maior = numInv;
+                    fator1 = num1;
+                    fator2 = num2;
+                }
+            }
+        }
+    }
+    printf("O maior palindromo a partir de %d x %d eh: %d\n", fator1, fator2, maior);
+}
+
+23. Escreva um programa que leia um número inteiro positivo n e em seguida imprima n linhas
+do chamado Triangulo de Floyd. Para n = 6, temos:
+1
+2 3
+4 5 6
+7 8 9 10
+11 12 13 14 15
+16 17 18 19 20 21
+
+#include <stdio.h>
+int main(){
+    int n, num = 1;
+    printf("Insira um numero: ");
+    scanf("%d", &n);
+    for (int i = 0; i <= n; i++)
+    {
+        for (int j = 0; j < i; j++)
+        {
+            printf("%d ", num);
+            num++;
+        }
+        printf("\n");
+    }
+    
+}
