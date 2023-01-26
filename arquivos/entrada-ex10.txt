@@ -1,0 +1,10 @@
+SaoPaulo 12396372
+RiodeJaneiro 6775561
+Brasilia 3094325
+Salvador 2900319
+Fortaleza 2703391
+BeloHorizonte 2530701
+Manaus 2255903
+Curitiba 1963726
+Recife 1661017
+Goiania 1555626

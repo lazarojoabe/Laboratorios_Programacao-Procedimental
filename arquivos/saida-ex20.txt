@@ -1,0 +1,4 @@
+Nome: jose
+                                   Nota: 3.20Nome: maria
+                                  Nota: 4.20Nome: julio
+                                  Nota: 4.30

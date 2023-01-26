@@ -1,0 +1,379 @@
+	ARQUIVOS
+somente exercícios múltiplos de 5
+
+5. Faça um programa que receba do usuário um arquivo texto e um caractere. Mostre na tela
+quantas vezes aquele caractere ocorre dentro do arquivo.
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+    FILE *arq;
+    char nome_arquivo[50];
+    char c, letra;
+    int ocorrencia = 0, i;
+
+    printf("Insira o nome do arquivo a ser analisado: ");
+    scanf("%s", nome_arquivo);
+    arq = fopen(nome_arquivo, "w");
+    if(arq == NULL){
+        printf("Erro na leitura!");
+        exit(1);
+    }
+    printf("Arquivo criado! Insira caracteres nele para que seja feita a analise!\n");
+    if((letra = fgetc(arq) == EOF)){
+        printf("arquivo vazio!");
+        exit(1);
+    }
+    fflush(stdin);
+    printf("Insira um caracter a ser analisado: ");
+    scanf("%c", &c);
+    
+    while ((letra = fgetc(arq))!= EOF)
+    {
+        if(letra == c){
+            ocorrencia++;
+        }
+    }
+    printf("A letra %c apareceu %d vezes!", c, ocorrencia);
+    fclose(arq);
+    return 0;
+}
+
+10. Faça um programa que receba o nome de um arquivo de entrada e outro de saída. O arquivo
+de entrada contém em cada linha o nome de uma cidade (ocupando 40 caracteres) e o seu
+número de habitantes. O programa deverá ler o arquivo de entrada e gerar um arquivo de
+saída onde aparece o nome da cidade mais populosa seguida pelo seu número de
+habitantes.
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+    FILE *entrada, *saida;
+    char nome[50], nome_populosa[50];
+    int populacao, maior_populacao = 0;
+    entrada = fopen("entrada-ex10.txt", "r");
+    
+    while (fscanf(entrada, "%s %d", nome, &populacao) != EOF)
+    {
+        if(maior_populacao < populacao){
+            maior_populacao = populacao;
+            strcpy(nome_populosa, nome);
+        }
+    }
+    saida = fopen("saida-ex10.txt", "w");
+    fprintf(saida, "%s ", nome_populosa);
+    fprintf(saida, "%d", maior_populacao);
+    fclose(entrada);
+    fclose(saida);
+    return 0;
+}
+OBS: Os arquivos "entrada" e "saida" estão anexados na pasta "arquivos".
+
+15. Faça um programa que receba como entrada o ano corrente e o nome de dois arquivos:
+um de entrada e outro de saída. Cada linha do arquivo de entrada contém o nome de uma
+pessoa (ocupando 40 caracteres) e o seu ano de nascimento. O programa deverá ler o
+arquivo de entrada e gerar um arquivo de saída onde aparece o nome da pessoa seguida
+por uma string que representa a sua idade.
+- Se a idade for menor do que 18 anos, escreva “menor de idade”;
+- Se a idade for maior do que 18 anos, escreva “maior de idade”;
+- Se a idade for igual a 18 anos, escreva “entrando na maior idade”.
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+    FILE *entrada, *saida;
+    int ano_nasc, ano_atual = 2023, i, j, idade;
+    char nome[50];
+
+    entrada = fopen("entrada-ex15.txt", "r");
+    saida = fopen("saida-ex15.txt", "w");
+    if(entrada == NULL){
+        printf("Houve um erro na leitura!");
+    }
+    while (fscanf(entrada, "%s %d", nome, &ano_nasc) != EOF)
+    {
+        idade = ano_atual - ano_nasc;
+        if(idade > 18){
+            fprintf(saida, "%s eh Maior de idade!\n", nome);
+        } else if(idade == 18){
+            fprintf(saida, "%s eh Entrando na maioridade!\n", nome);
+        } else {
+            fprintf(saida, "%s Menor de idade!\n", nome);
+        }
+    }
+    fclose(entrada);
+    fclose(saida);
+    return 0;
+}
+
+20. Crie um programa que receba como entrada o número de alunos de uma disciplina. Aloque
+dinamicamente dois vetores para armazenar as informações a respeito desses alunos. O
+primeiro vetor contém o nome dos aluno	s e o segundo contém suas notas finais. Crie um
+arquivo que armazene, a cada linha, o nome do aluno e sua nota final. Use nomes com no
+máximo 40 caracteres. Se o nome não contém 40 caracteres, complete com espaço em
+branco.
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+    int num, i, j;
+    float *nota;
+    char **nome;
+    FILE *saida;
+
+    saida = fopen("saida-ex20.txt", "w");
+
+    if(saida == NULL){
+        printf("Erro na abertura do arquivo!");
+        exit(1);
+    }
+    printf("Insira o numero de alunos da disciplina: ");
+    scanf("%d", &num);
+
+    nota = (float*) calloc(num, sizeof(float));
+    nome = (char**) calloc(num, sizeof(char*));
+    for ( i = 0; i < num; i++)
+    {
+        nome[i] = (char*) calloc(40, sizeof(char));
+        
+        printf("Informe o nome do aluno: ");
+        fflush(stdin);
+        fgets(nome[i], 40, stdin);
+        printf("Informe a nota desse aluno: ");
+        scanf("%f", &nota[i]);
+        if(strlen(nome[i]) < 40){
+            for ( j = strlen(nome[i]); j < 40; j++)
+            {
+                nome[i][j] = ' ';
+            }
+        }
+        nome[i][39] = '\0';
+    }
+    
+    for ( i = 0; i < num; i++)
+    {
+
+        fprintf(saida, "Nome: %s Nota: %.2f", nome[i], nota[i]);
+        
+    }
+    for ( i = 0; i < num; i++)
+    {
+        free(nome[i]);
+    }
+    free(nome);
+    free(nota);
+    fclose(saida);
+    return 0;
+}
+
+25. Faça um programa gerenciar uma agenda de contatos. Para cada contato armazene o
+nome, o telefone e o aniversário (dia e mês). O programa deve permitir
+ inserir contato;
+ remover contato;
+ pesquisar um contato pelo nome;
+ listar todos os contatos;
+ listar os contatos cujo nome inicia com uma dada letra;
+ imprimir os aniversariantes do mês.
+Sempre que o programa for encerrado, os contatos devem ser armazenados em um arquivo
+binário. Quando o programa iniciar, os contatos devem ser inicializados com os dados contidos
+neste arquivo binário.
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct
+{
+    char nome[50];
+    char tel[20];
+    int dia;
+    int Mes;
+} Contact;
+
+int main()
+{
+    int op, mes, i, j, num_contatos = 0;
+    Contact contatos[100];
+    char letra, Nome[30];
+
+    FILE *saida1 = fopen("saida1-ex25.bin", "rb");
+    if (saida1 == NULL)
+    {
+        printf("Erro na abertura do arquivo!\n");
+        exit(1);
+    }
+
+    fread(&num_contatos, sizeof(int), 1, saida1);
+    fread(contatos, sizeof(Contact), num_contatos, saida1);
+
+    FILE *saida2 = fopen("saida2-ex25.bin", "wb");
+    if (saida2 == NULL)
+    {
+        printf("Erro na abertura do arquivo!\n");
+        exit(1);
+    }
+
+    printf("1. Adicionar contato\n");
+    printf("2. Remover contato\n");
+    printf("3. Pesquisar contato\n");
+    printf("4. Lista de todos os contatos\n");
+    printf("5. Lista de contatos(letra)\n");
+    printf("6. Imprimir aniversariantes\n");
+    printf("7. Sair\n");
+    printf("Enter option: ");
+    scanf("%d", &op);
+
+    switch (op)
+    {
+    case 1:
+        if (num_contatos >= 100)
+        {
+            printf("A lista está cheia.\n");
+            return;
+        }
+
+        printf("Nome: ");
+        scanf("%s", contatos[num_contatos].nome);
+        printf("Telefone: ");
+        scanf("%s", contatos[num_contatos].tel);
+        printf("Aniversario(dia/mes): ");
+        scanf("%d %d", &contatos[num_contatos].dia, &contatos[num_contatos].Mes);
+
+        num_contatos++;
+        break;
+    case 2:
+        printf("Nome: ");
+        scanf("%s", Nome);
+
+        for (i = 0; i < num_contatos; i++)
+        {
+            if (strcmp(Nome, contatos[i].nome) == 0)
+            {
+                break;
+            }
+        }
+
+        for (j = i; j < num_contatos - 1; j++)
+        {
+            contatos[j] = contatos[j + 1];
+        }
+
+        num_contatos--;
+        printf("Contato removido!\n");
+        break;
+    case 3:
+        printf("Nome: ");
+        scanf("%s", Nome);
+
+        for (i = 0; i < num_contatos; i++)
+        {
+            if (strcmp(Nome, contatos[i].nome) == 0)
+            {
+                break;
+            }
+        }
+
+        printf("Name: %s\nTelefone: %s\nAniversario: %d/%d\n", contatos[i].nome, contatos[i].tel, contatos[i].dia, contatos[i].Mes);
+        break;
+    case 4:
+        for (int i = 0; i < num_contatos; i++)
+        {
+            printf("Nome: %s, Telefone: %s, Aniversario: %d/%d\n", contatos[i].nome, contatos[i].tel, contatos[i].dia, contatos[i].Mes);
+        }
+        break;
+    case 5:
+        printf("Letra: ");
+        scanf(" %c", &letra);
+
+        for (int i = 0; i < num_contatos; i++)
+        {
+            if (contatos[i].nome[0] == letra)
+            {
+                printf("Nome: %s, Telefone:%s, Aniversario: %d/%d\n", contatos[i].nome, contatos[i].tel, contatos[i].dia, contatos[i].Mes);
+            }
+        }
+        break;
+    case 6:
+        printf("Mes: ");
+        scanf("%d", &mes);
+
+        for (int i = 0; i < num_contatos; i++)
+        {
+            if (contatos[i].Mes == mes)
+            {
+                printf("Nome: %s, Telefone: %s, Aniversario: %d/%d\n", contatos[i].nome, contatos[i].tel, contatos[i].dia, contatos[i].Mes);
+            }
+        }
+        break;
+    case 7:
+        fwrite(&num_contatos, sizeof(int), 1, saida2);
+        fwrite(contatos, sizeof(Contact), num_contatos, saida2);
+    default:
+        printf("Digite uma opcao valida!\n");
+        break;
+    }
+
+    fclose(saida1);
+    fclose(saida2);
+
+    return 0;
+}
+
+
+28. Faça um programa que recebe como entrada o nome de um arquivo de entrada e o nome
+de um arquivo de saída. Cada linha do arquivo de entrada possui colunas de tamanho de 30
+caracteres. No arquivo de saída deverá ser escrito o arquivo de entrada de forma inversa.
+Veja um exemplo:
+Arquivo de entrada:
+Hoje dia de prova de PP
+A prova esta muito facil
+Vou tirar uma boa nota
+Arquivo de saida:
+Aton aob amu rarit uov
+Licaf otium atse avorp A
+PP ed avorp ed aid he ejoH
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char arq_saida[100], linha[50];;
+    printf("Digite o nome do arquivo de saida: ");
+    scanf("%s", arq_saida);
+
+    FILE *entrada = fopen("entrada-ex28.txt", "r");
+    FILE *saida = fopen(arq_saida, "w");
+
+    if (entrada == NULL || saida == NULL)
+    {
+        printf("Erro ao abrir arquivos\n");
+        return 1;
+    }
+    while (fgets(linha, 50, entrada))
+    {
+        int tam = strlen(linha);
+        for (int i = 0; i < tam / 2; i++)
+        {
+            char temp = linha[i];
+            linha[i] = linha[tam - 1 - i];
+            linha[tam - 1 - i] = temp;
+        }
+        fputs(linha, saida);
+    }
+
+    fclose(entrada);
+    fclose(saida);
+    return 0;
+}
+
+
+
+
